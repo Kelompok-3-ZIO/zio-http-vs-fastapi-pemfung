@@ -1,0 +1,21 @@
+[project]
+name = "siak-fastapi"
+version = "0.1.0"
+description = "SIAK mini dengan FastAPI, pembanding versi ZIO HTTP"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.165.0",
+    "pydantic-settings>=2.6",
+    "pyjwt>=2.10",
+    "pwdlib[argon2]>=0.2",
+    "sqlmodel>=0.0.22",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

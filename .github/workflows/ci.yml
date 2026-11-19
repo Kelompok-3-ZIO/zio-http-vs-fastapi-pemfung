@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  zio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: VirtusLab/scala-cli-setup@v1
+        with:
+          jvm: temurin:17
+      - name: Test versi ZIO HTTP
+        working-directory: zio
+        run: scala-cli test .
+
+  fastapi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10
+      - name: Test versi FastAPI
+        working-directory: fastapi
+        run: uv run pytest

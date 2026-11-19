@@ -1,0 +1,21 @@
+# Database hasil db/init.sh
+db/*.db
+
+# Scala
+.scala-build/
+.bsp/
+.metals/
+target/
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Rahasia lokal
+.env
+
+# Editor dan OS
+.vscode/
+.idea/
+.DS_Store
